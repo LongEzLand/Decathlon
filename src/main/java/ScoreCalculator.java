@@ -16,7 +16,7 @@ public class ScoreCalculator {
 
         double x = b - p;
         double z = Math.pow(x, c);
-        int points = (int)Math.round(a * z);
+        int points = (int)Math.round(a * z); // Need 
         return points;
     }
 
