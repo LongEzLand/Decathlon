@@ -1,8 +1,8 @@
 public class EventResult {
     private Event event;
-    private double value;
+    private String value;
 
-    public EventResult(Event event, double value) {
+    public EventResult(Event event, String value) {
         this.event = event;
         this.value = value;
     }
@@ -15,11 +15,11 @@ public class EventResult {
         this.event = event;
     }
 
-    public double getValue() {
+    public String getValue() {
         return value;
     }
 
-    public void setValue(double value) {
+    public void setValue(String value) {
         this.value = value;
     }
 }

@@ -14,7 +14,7 @@ public class Decathlon {
                 EventParameters parameters = EventParameters.getEventParameters(result.getEvent());
 
                 if (parameters.getIsTrackEvent()) {
-                    double athleteValue = result.getValue();
+                    String athleteValue = result.getValue();
                     System.out.println("was trackevent");
                     // one logic
                 } else {

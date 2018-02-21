@@ -81,6 +81,6 @@ public class CSVParser implements InputParser<File> {
     }
 
     private EventResult getEventResult(Event event, String rawValue) {
-        return new EventResult(event, Double.parseDouble(rawValue));
+        return new EventResult(event, rawValue);
     }
 }
