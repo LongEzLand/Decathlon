@@ -1,3 +1,5 @@
+import com.sun.xml.internal.bind.v2.TODO;
+
 public class ScoreCalculator {
 
     // Should take in values from EventParameters, EventResults and Athlete and calculate score and place using
@@ -12,16 +14,25 @@ public class ScoreCalculator {
 
     need to think about and test 1500m dash, where there is hundredth of a second in results...
     */
-    public int trackScore (double a, double b, double p, double c){
+    public int trackScore (double a, double b, String performance, double c){
 
+        // TODO: 21.02.2018  check for performance input delimiter type(comma, dot etc..)
+
+        performance = performance.trim().replaceAll("[^\\d.]", ".");//trims beginning and end and then
+        // replaces all non-digit chars in string with "." which results a string with digits and dots
+        /*StringBuilder sb = new StringBuilder(performance);
+        System.out.println(sb );*/
+
+        double p = Double.parseDouble(performance);
         double x = b - p;
         double z = Math.pow(x, c);
-        int points = (int)Math.round(a * z); // Need
+        int points = (int)Math.round(a * z);
         return points;
     }
 
-    public int fieldScore (double a, double b, double p, double c){
+    public int fieldScore (double a, double b, String performance, double c){
 
+        double p = Double.parseDouble(performance);
         double x = p - b;
         double z = Math.pow(x, c);
         int points = (int)Math.round(a * z);
