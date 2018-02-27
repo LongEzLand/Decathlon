@@ -39,10 +39,10 @@ public class EventParameters {///Class
 
     public void setC(double c) { this.c = c; }
 
-    public static EventParameters getEventParameters(Event EVENT) { //something wrong here maybe...
+    public static EventParameters getEventParameters(Event originalEvent) {
         EventParameters event = null;
 
-        switch (EVENT) {
+        switch (originalEvent) {
             case HUNDREDDASH:
                 event = new EventParameters(true, 25.4347, 18.00, 1.81);
                 break;

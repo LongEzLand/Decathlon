@@ -16,13 +16,11 @@ public class CSVParser implements InputParser<File> {
         return new File(classLoader.getResource(fileName).getFile());
     }
 
-
     @Override
     public List<Athlete> parseData(File file) {
         List<Athlete> athletes = new ArrayList<>();
         BufferedReader br = null;
         FileReader fr = null;
-
 
 
         try {

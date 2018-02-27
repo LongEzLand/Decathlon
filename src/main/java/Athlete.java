@@ -3,7 +3,6 @@ import java.util.List;
 
 public class Athlete {
 
-
     private String athleteName;
     private String score;
     private String place;
