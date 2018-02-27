@@ -4,11 +4,11 @@ import java.util.List;
 public class Athlete {
 
     private String athleteName;
-    private String score;
+    private int score=0;
     private String place;
     private List<EventResult> eventResults = new ArrayList<>();
 
-    public Athlete(String athleteName, String score, String place) {
+    public Athlete(String athleteName, int score, String place) {
         this.athleteName = athleteName;
         this.score = score;
         this.place = place;
@@ -27,11 +27,11 @@ public class Athlete {
 
     }
 
-    public String getScore() {
+    public int getScore() {
         return score;
     }
 
-    public void setScore(String score) {
+    public void setScore(int score) {
         this.score = score;
     }
 

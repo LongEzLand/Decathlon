@@ -14,7 +14,7 @@ public class ScoreCalculator {
 
      need to think about and test 1500m dash, where there is hundredth of a second in results...
      */
-    public int trackScore(double a, double b, String performance, double c) {
+    public static int trackScore(double a, double b, double c, String performance) {
 
         // TODO: 21.02.2018  check for performance input delimiter type(comma, dot etc..)
 
@@ -26,13 +26,13 @@ public class ScoreCalculator {
         }
 
         double p = Double.parseDouble(performance);
-        double x = b - p;
+        double x = Math.abs(b - p);
         double z = Math.pow(x, c);
         int points = (int) Math.round(a * z);
         return points;
     }
 
-    public int fieldScore(double a, double b, String performance, double c) {
+    public static int fieldScore(double a, double b, double c, String performance) {
 
         performance = performance.trim( ).replaceAll("[^\\d.]", ".");
 
@@ -41,7 +41,7 @@ public class ScoreCalculator {
 
         }
         double p = Double.parseDouble(performance);
-        double x = p - b;
+        double x = Math.abs(p - b);
         double z = Math.pow(x, c);
         int points = (int) Math.round(a * z);
         return points;

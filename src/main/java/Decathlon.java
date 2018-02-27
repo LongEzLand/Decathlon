@@ -13,18 +13,42 @@ public class Decathlon {
         for (Athlete athlete : athletes) {
 
             for (EventResult result : athlete.getEventResults()) {
-                EventParameters parameters = EventParameters.getEventParameters(result.getEvent());
+                EventParameters params = EventParameters.getEventParameters(result.getEvent());
 
-                if (parameters.getIsTrackEvent()) {
+                if (params.getIsTrackEvent()) {
                     String athleteEventResult = result.getValue();
-                    System.out.println(athleteEventResult );
-                    System.out.println("was trackevent");
+                    Integer computedResult = ScoreCalculator.trackScore(
+                        params.getA(), params.getB(), params.getC(),result.getValue());
+
+                    athlete.setScore(athlete.getScore() + computedResult); // computing total score
+
+
+
+                    System.out.println(athlete.getAthleteName());
+                    System.out.print("trackevent ");
+                    System.out.println( result.getEvent());
+                    System.out.println("result: " + athleteEventResult );
+                    System.out.println("points "+ computedResult);
+
+                    System.out.println("Total Score:" + athlete.getScore() );
+                    System.out.println( );
+
                     // one logic
 
                 } else {
                     String athleteEventResult = result.getValue();
-                    System.out.println(athleteEventResult );
-                    System.out.println("was fieldevent" );
+                    Integer computedResult = ScoreCalculator.fieldScore(
+                            params.getA(), params.getB(), params.getC(),result.getValue());
+
+                    athlete.setScore(athlete.getScore() + computedResult);
+
+                    System.out.println(athlete.getAthleteName());
+                    System.out.print("fieldevent ");
+                    System.out.println( result.getEvent());
+                    System.out.println("result: " + athleteEventResult );
+                    System.out.println("points "+ computedResult);
+                    System.out.println("Score:" + athlete.getScore() );
+                    System.out.println( );
                     // diff logic
                 }
 
