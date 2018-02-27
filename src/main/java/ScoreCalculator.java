@@ -18,10 +18,12 @@ public class ScoreCalculator {
 
         // TODO: 21.02.2018  check for performance input delimiter type(comma, dot etc..)
 
-        performance = performance.trim().replaceAll("[^\\d.]", ".");//trims beginning and end and then
-        // replaces all non-digit chars in string with "." which results a string with digits and dots
-        /*StringBuilder sb = new StringBuilder(performance);
-        System.out.println(sb );*/
+        performance = performance.trim().replaceAll("[^\\d.]", ".");//trims beginning + end and
+        // replaces all non-digit chars in string with "." which results a string with only digits and dots
+
+        while (performance.contains("..")){
+            performance = performance.replace("..","." );//finds all occurances of ".." and replaces them with "." until there is none
+        }
 
         double p = Double.parseDouble(performance);
         double x = b - p;
