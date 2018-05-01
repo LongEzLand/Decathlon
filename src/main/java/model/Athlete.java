@@ -1,10 +1,13 @@
+package model;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Athlete {
 
     private String athleteName;
-    private int score=0;
+    private int score = 0;
     private String place;
     private List<EventResult> eventResults = new ArrayList<>();
 
@@ -28,7 +31,7 @@ public class Athlete {
     }
 
     public int getScore() {
-        return score;
+        return this.score;
     }
 
     public void setScore(int score) {
