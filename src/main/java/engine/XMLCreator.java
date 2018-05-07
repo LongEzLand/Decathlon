@@ -58,7 +58,7 @@ public class XMLCreator implements DocumentCreator {
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
             DOMSource source = new DOMSource(doc);
-            StreamResult result = new StreamResult(new File("C:\\Users\\Lazarus\\Music/test.xml"));
+            StreamResult result = new StreamResult(new File("/test.xml"));
             transformer.transform(source, result);
 
             // Output to console for testing
